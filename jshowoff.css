@@ -97,6 +97,11 @@ h2 {
 	margin: 1.6em 0 .4em;
 	}
 
+h3 {
+font-size: 1.6em;
+margin: 1.2em 0 .4em;
+}
+
 p, li {
 	font-size: 1.3em;
 	line-height: 1.5em;

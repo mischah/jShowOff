@@ -56,6 +56,19 @@
 	$(document).ready(function(){ $('#features').jshowoff(); });
 &lt;/script&gt;</code></pre>
 
+<h3>Important note (since jShowOff 0.1.3)</h3>
+
+<p>Since jQuery 1.9 removed the jQuery.browser() method old IEs are now targeted via the conditional classes »oldie« or »lt-ie9« added to the html element. This has do be done via conditional comments like the following.</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7]&gt;      &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;         &lt;html class="no-js lt-ie9 lt-ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;         &lt;html class="no-js lt-ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class="no-js"&gt; &lt;!--&lt;![endif]--&gt;
+</code></pre>
+
+<p>See <a href="http://html5boilerplate.com">HTML5 Boilerplate</a> for details to this technique.</p>
+
 		<h2>Options</h2>
 		<p>jShowOff has several options for customization.  Pass these settings as an object to the <code>.jshowoff()</code> method like this:</p>
 		<pre><code>$('#features').jshowoff({ speed:1500, links: false }); });</code></pre>		
