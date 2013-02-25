@@ -27,6 +27,18 @@ The required markup for jShowOff is a parent element with one or more child elem
     	$(document).ready(function(){ $('#features').jshowoff(); });
     </script>
 
+###Important note (since jShowOff 0.1.3)
+    
+Since jQuery 1.9 removed the jQuery.browser() method old IEs are now targeted via the conditional classes »oldie« or »lt-ie9« added to the html element. This has do be done via conditional comments like the following.
+
+    <!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+See [HTML5 Boilerplate] [8] for details to this technique.
+
 ## Options
 
 jShowOff has several options for customization.  Pass these settings as an object to the `.jshowoff()` method like this:
@@ -153,3 +165,4 @@ This plugin was written by [Erik Kallevig][5].
  [5]: http://ekallevig.com/about
  [6]: http://ekallevig.com/jshowoff
  [7]: http://github.com/ekallevig/jShowOff/issues
+ [8]: http://html5boilerplate.com

@@ -2,7 +2,7 @@
 
 Title:		jShowOff: a jQuery Content Rotator Plugin
 Author:		Erik Kallevig
-Version:	0.1.2
+Version:	0.1.3
 Website:	http://ekallevig.com/jshowoff
 License: 	Dual licensed under the MIT and GPL licenses.
 
@@ -133,7 +133,9 @@ speed :				time each slide is shown [integer, milliseconds, defaults to 3000]
 						$cont.children().eq(0).css('position','absolute').slideIt({direction:oldSlideDir,showHide:'hide',changeSpeed:config.changeSpeed},function(){$(this).remove();});
 					};
 				} else if (config.effect=='fade') {
-					$(gallery[counter]).clone().appendTo($cont).hide().fadeIn(config.changeSpeed,function(){if($.browser.msie)this.style.removeAttribute('filter');});
+					$(gallery[counter]).clone().appendTo($cont).hide().fadeIn(config.changeSpeed,function(){
+						if ($('html').hasClass('oldie') || $('html').hasClass('lt-ie9'))this.style.removeAttribute('filter');
+					});
 					if($cont.children().length>1){
 						$cont.children().eq(0).css('position','absolute').fadeOut(config.changeSpeed,function(){$(this).remove();});
 					};
