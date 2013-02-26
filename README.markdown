@@ -130,6 +130,10 @@ If you need help or if you've found a bug, please [create an issue][7] and I wil
 
 ## Change Log
 
+0.1.3
+
+*	Replace jQuery.browser. Old IEs are now targeted via the conditional classes »oldie« or »lt-ie9« added to the html element. See README for details-
+
 0.1.2
 
 *   Added `effect` option to customize transitions. Options currently include: `fade`, `slideLeft` or `none`.  Slide effect uses new global jQuery mini-plugin, `$.slideIt()`, which can be used on separately on any element.
